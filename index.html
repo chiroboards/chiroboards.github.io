@@ -51,9 +51,9 @@ section{padding:64px 0}
 .btn{display:inline-block;background:var(--green);color:#fff;font-weight:800;text-decoration:none;padding:12px 22px;border-radius:16px;box-shadow:0 5px 0 var(--green-edge)}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:22px 18px;margin:30px 0 6px}
 .btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--green-edge)}
-.phone{justify-self:center;width:min(300px,78vw);border-radius:44px;padding:10px;background:#111;box-shadow:var(--shadow),0 0 0 2px #2a2a2a inset}
-.phone img{border-radius:35px}
-.heroart{position:relative;display:grid;place-items:center}
+.phone{justify-self:center;width:min(266px,72vw);border-radius:44px;padding:10px;background:#111;box-shadow:var(--shadow),0 0 0 2px #2a2a2a inset}
+
+.heroart{position:relative;display:grid;place-items:center;padding:12px 0}
 .heroart:before{content:"";position:absolute;inset:8% 4%;background:var(--mint);border-radius:48% 52% 46% 54%/50% 44% 56% 50%;z-index:-1}
 @media (max-width:820px){.hero{grid-template-columns:1fr;text-align:center}.hero p.lead{margin-inline:auto}.cta{justify-content:center}}
 
@@ -77,7 +77,7 @@ section{padding:64px 0}
 
 /* trail */
 .trail{background:var(--mint);position:relative;overflow:hidden}
-.trail svg{position:absolute;left:0;top:0;width:100%;height:100%;opacity:.22;pointer-events:none}
+.trail svg{position:absolute;left:0;top:0;width:100%;height:100%;opacity:.3;pointer-events:none}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;position:relative}
 .step{background:var(--card);border-radius:22px;padding:22px;box-shadow:0 5px 0 rgba(60,100,20,.18)}
 .num{width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:grid;place-items:center;box-shadow:0 4px 0 var(--green-edge);margin-bottom:12px}
@@ -125,11 +125,68 @@ footer a:hover{opacity:1;text-decoration:underline}
 .fgrid h4{margin:0 0 8px;font-size:15px;color:#fff}
 .fgrid div a{display:block;margin:6px 0;font-size:15px}
 .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px;font-size:13.5px;opacity:.75}
+
+/* motion */
+.bar{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--green);transform-origin:0 50%;transform:scaleX(0);z-index:50}
+.navbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--page) 84%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.navbar.stuck{border-color:var(--line)}
+.screens{position:relative;aspect-ratio:600/1304;border-radius:35px;overflow:hidden;background:#F7FAF3}
+.screens img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:0;opacity:0;transform:translateX(6%) scale(1.02);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.screens img.on{opacity:1;transform:none}
+.screens img.off{opacity:0;transform:translateX(-6%) scale(.98)}
+.phone{animation:bob 6s ease-in-out infinite;will-change:transform}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.heroart:before{animation:blob 16s ease-in-out infinite alternate}
+@keyframes blob{0%{border-radius:48% 52% 46% 54%/50% 44% 56% 50%;rotate:0deg}100%{border-radius:56% 44% 52% 48%/44% 56% 46% 54%;rotate:14deg}}
+.cap{margin:22px auto 0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.cap b{background:var(--card);border:1px solid var(--line);box-shadow:0 4px 0 var(--line);padding:9px 18px;border-radius:999px;font-size:15px;min-width:230px;text-align:center}
+.dots{display:flex;gap:8px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line);transition:all .3s}
+.dots i.on{background:var(--green);width:26px;border-radius:6px}
+.spark{position:absolute;font-size:22px;animation:drift 7s ease-in-out infinite;pointer-events:none;opacity:.9}
+.spark:nth-of-type(1){left:2%;top:20%;animation-delay:-1s}.spark:nth-of-type(2){right:0;top:36%;animation-delay:-3s;font-size:18px}
+.spark:nth-of-type(3){left:8%;bottom:22%;animation-delay:-5s;font-size:16px}.spark:nth-of-type(4){right:6%;bottom:30%;animation-delay:-2s}
+@keyframes drift{0%,100%{translate:0 0;rotate:0deg}50%{translate:8px -18px;rotate:18deg}}
+.ticker{overflow:hidden;margin-top:44px;padding:6px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.ticker div{display:flex;gap:14px;width:max-content;animation:slide 38s linear infinite}
+.ticker span{white-space:nowrap;font-weight:800;font-size:15px;padding:10px 18px;border-radius:999px;background:var(--card);border:1px solid var(--line);box-shadow:0 4px 0 var(--line)}
+.ticker span em{font-style:normal;margin-right:8px}
+@keyframes slide{to{transform:translateX(-50%)}}
+.card{transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 10px 0 var(--line)}
+.card:hover .ico{animation:pop .5s ease}
+@keyframes pop{40%{scale:1.25;rotate:-8deg}}
+.tile{transition:transform .25s ease}.tile:hover{transform:translateY(-4px) rotate(-1deg)}
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.js .rv.left{transform:translateX(-60px)}.js .rv.right{transform:translateX(60px)}.js .rv.zoom{transform:scale(.86) rotate(-3deg)}
+.js .rv.in{opacity:1;transform:none}
+.js .num{scale:0;transition:scale .5s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(var(--d,0s) + .25s)}
+.js .step.in .num{scale:1}
+.trail svg path:first-child{stroke-dasharray:1;stroke-dashoffset:var(--draw,1)}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.js .num{scale:1}.trail svg path:first-child{stroke-dashoffset:0}}
+
+html,body{overflow-x:clip}
+/* tour */
+.tour{padding-top:30px}
+.tourgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;margin-top:20px}
+.pin{position:sticky;top:104px;align-self:start;display:grid;place-items:center;padding:10px 0 30px}
+.pin .phone{animation:none;width:min(280px,70vw)}
+.pin:before{content:"";position:absolute;inset:6% 2%;background:var(--mint);border-radius:50%;z-index:-1;filter:blur(2px)}
+.beats article{min-height:74vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transform:translateX(18px);transition:opacity .45s ease,transform .5s ease}
+.beats article.on{opacity:1;transform:none}
+.beats .k{font-weight:800;color:var(--green);font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+@media (prefers-color-scheme:dark){.beats .k{color:#9bd45c}}
+.beats h3{font-size:clamp(26px,3vw,36px)}
+.beats p{color:var(--muted);font-size:18px;max-width:440px;margin:12px 0 0}
+.beats img{display:none}
+@media (max-width:820px){.tourgrid{grid-template-columns:1fr;gap:0}.pin{display:none}
+ .beats article{min-height:0;opacity:1;transform:none;text-align:center;padding:26px 0;align-items:center}
+ .beats img{display:block;width:min(250px,66vw);border-radius:30px;border:8px solid #111;box-shadow:var(--shadow);margin-top:22px}}
 </style>
 </head>
 <body>
-
-<div class="wrap">
+<div class="bar" id="bar"></div>
+<div class="navbar" id="navbar"><div class="wrap">
   <div class="nav">
     <a class="brand" href="index.html"><img src="assets/icon.png" alt="ChiroBoards logo">ChiroBoards</a>
     <nav>
@@ -139,6 +196,9 @@ footer a:hover{opacity:1;text-decoration:underline}
       <a href="support.html">Support</a>
     </nav>
   </div>
+</div></div>
+
+<div class="wrap">
 
   <header class="hero">
     <div>
@@ -151,15 +211,24 @@ footer a:hover{opacity:1;text-decoration:underline}
       <p class="note">A new board question every day on Instagram <a href="https://www.instagram.com/getchiroboards/">@getchiroboards</a>.</p>
     </div>
     <div class="heroart">
-      <div class="phone"><img src="assets/today-iphone.png" alt="The ChiroBoards Today screen: tiles for readiness, day streak and days left, above a winding trail of today's study steps ending in a trophy." width="1206" height="2622"></div>
+      <div class="phone"><div class="screens" id="screens">
+        <img class="on" src="assets/s-today.jpg" alt="The ChiroBoards Today screen: readiness, day streak and days left, above a winding trail of today's study steps ending in a trophy." width="600" height="1304" data-cap="Today's plan, as a trail">
+        <img src="assets/s-question.jpg" alt="A practice question with every answer choice explained." width="600" height="1304" data-cap="Every answer explained">
+        <img src="assets/s-notes.jpg" alt="Study notes with a labelled figure." width="600" height="1304" data-cap="Notes with figures">
+        <img src="assets/s-study.jpg" alt="The Study screen with a tile for each of the six subjects." width="600" height="1304" data-cap="All six subjects">
+        <img src="assets/s-plan.jpg" alt="The week-by-week study plan with Easy, Medium and Hard pace." width="600" height="1304" data-cap="A plan from your exam date">
+      </div></div>
+      <div class="cap" aria-hidden="true"><b id="cap">Today's plan, as a trail</b><div class="dots" id="dots"></div></div>
+      <span class="spark" aria-hidden="true">✦</span><span class="spark" aria-hidden="true">🍃</span><span class="spark" aria-hidden="true">✦</span><span class="spark" aria-hidden="true">🍂</span>
     </div>
   </header>
 
   <div class="tiles">
-    <div class="tile t1"><b>3,600</b><span>practice questions with explanations</span></div>
-    <div class="tile t2"><b>6</b><span>Part I subjects covered</span></div>
-    <div class="tile t3"><b>3</b><span>devices: iPhone, iPad and Mac</span></div>
+    <div class="tile t1"><b data-n="3600">3,600</b><span>practice questions with explanations</span></div>
+    <div class="tile t2"><b data-n="6">6</b><span>Part I subjects covered</span></div>
+    <div class="tile t3"><b data-n="3">3</b><span>devices: iPhone, iPad and Mac</span></div>
   </div>
+  <div class="ticker" aria-hidden="true"><div><span><em>🦴</em>General Anatomy</span><span><em>🧠</em>Spinal Anatomy</span><span><em>💓</em>Physiology</span><span><em>🧪</em>Chemistry</span><span><em>🔬</em>Pathology</span><span><em>🦠</em>Microbiology</span><span><em>🗂️</em>Flashcards</span><span><em>⏱️</em>Mock exams</span><span><em>📅</em>Study plan</span><span><em>🎯</em>Weak areas</span><span><em>🦴</em>General Anatomy</span><span><em>🧠</em>Spinal Anatomy</span><span><em>💓</em>Physiology</span><span><em>🧪</em>Chemistry</span><span><em>🔬</em>Pathology</span><span><em>🦠</em>Microbiology</span><span><em>🗂️</em>Flashcards</span><span><em>⏱️</em>Mock exams</span><span><em>📅</em>Study plan</span><span><em>🎯</em>Weak areas</span></div></div>
 </div>
 
 <section id="features">
@@ -173,6 +242,27 @@ footer a:hover{opacity:1;text-decoration:underline}
       <div class="card"><div class="ico">📖</div><h3>Study notes</h3><p>Clear notes for every subject, with tables, mnemonics and original anatomy figures.</p></div>
       <div class="card"><div class="ico">🎯</div><h3>Weak-area coaching</h3><p>The app finds the topics you miss most and builds practice around them.</p></div>
       <div class="card"><div class="ico">🔒</div><h3>Private by design</h3><p>No accounts, no ads, no tracking. Your progress stays on your device.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tour">
+  <div class="wrap">
+    <h2>See it in action</h2>
+    <p class="sub">Scroll to flip through the app.</p>
+    <div class="tourgrid">
+      <div class="pin"><div class="phone"><div class="screens" id="tour">
+        <img class="on" src="assets/s-question.jpg" alt="" width="600" height="1304">
+        <img src="assets/s-notes.jpg" alt="" width="600" height="1304">
+        <img src="assets/s-exam.jpg" alt="" width="600" height="1304">
+        <img src="assets/s-study.jpg" alt="" width="600" height="1304">
+      </div></div></div>
+      <div class="beats">
+        <article class="on"><div class="k">Practice</div><h3>Every answer explained</h3><p>Pick an answer and see why it's right, and why each of the other choices is wrong. You learn something even when you miss.</p><img src="assets/s-question.jpg" alt="Every answer explained: a ChiroBoards screen." width="600" height="1304" loading="lazy"></article>
+        <article><div class="k">Read</div><h3>Notes that get to the point</h3><p>Short sections with tables, mnemonics and original figures, written around the Part I test plan.</p><img src="assets/s-notes.jpg" alt="Notes that get to the point: a ChiroBoards screen." width="600" height="1304" loading="lazy"></article>
+        <article><div class="k">Test</div><h3>Mock exams under time</h3><p>Timed exams that follow the real subject weights, then a breakdown of how you did in every subject.</p><img src="assets/s-exam.jpg" alt="Mock exams under time: a ChiroBoards screen." width="600" height="1304" loading="lazy"></article>
+        <article><div class="k">Choose</div><h3>Study any subject, any time</h3><p>Jump into a quick ten questions or pick one of the six subjects. The plan is a guide, not a cage.</p><img src="assets/s-study.jpg" alt="Study any subject, any time: a ChiroBoards screen." width="600" height="1304" loading="lazy"></article>
+      </div>
     </div>
   </div>
 </section>
@@ -261,5 +351,44 @@ footer a:hover{opacity:1;text-decoration:underline}
     <p class="legal">ChiroBoards is an independent study aid. It is not affiliated with, endorsed by or sponsored by the National Board of Chiropractic Examiners (NBCE). It does not guarantee any exam result.</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement; root.classList.add('js');
+  var calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // reveal on scroll
+  function mark(sel,cls,step){[].forEach.call(d.querySelectorAll(sel),function(e,i){e.classList.add('rv');if(cls)e.classList.add(cls);e.style.setProperty('--d',((i%3)*(step||.1))+'s')})}
+  mark('section h2, .sub, .fine'); mark('.tile'); mark('.card'); mark('.step',null,.18); mark('.plan'); mark('details',null,.06);
+  mark('.split > div','left'); mark('.shot','zoom');
+  var figs=d.querySelectorAll('.devices figure'); if(figs[0]){figs[0].classList.add('rv','left');figs[1].classList.add('rv');figs[2].classList.add('rv','right')}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);count(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  [].forEach.call(d.querySelectorAll('.rv'),function(e){io.observe(e)});
+  // count up
+  function count(el){var b=el.querySelector&&el.querySelector('b[data-n]'); if(!b||calm)return; var n=+b.dataset.n,t0=null;
+    function f(t){t0=t0||t;var k=Math.min(1,(t-t0)/1100);k=1-Math.pow(1-k,3);b.textContent=Math.round(n*k).toLocaleString('en-US');if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+  // phone screens
+  var imgs=d.querySelectorAll('#screens img'),cap=d.getElementById('cap'),dots=d.getElementById('dots'),cur=0;
+  [].forEach.call(imgs,function(_,i){var x=d.createElement('i');if(!i)x.className='on';dots.appendChild(x)});
+  function show(n){imgs[cur].className='off';dots.children[cur].className='';cur=n%imgs.length;imgs[cur].className='on';dots.children[cur].className='on';cap.textContent=imgs[cur].dataset.cap;
+    setTimeout(function(){[].forEach.call(imgs,function(m,i){if(i!==cur)m.className=''})},750)}
+  if(!calm&&imgs.length) setInterval(function(){if(!d.hidden)show(cur+1)},2900);
+  // pinned phone tour
+  var beats=d.querySelectorAll('.beats article'),tour=d.querySelectorAll('#tour img'),tc=0;
+  if(beats.length&&tour.length){var bo=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=[].indexOf.call(beats,e.target);if(n===tc)return;
+      tour[tc].className=n>tc?'off':'';beats[tc].classList.remove('on');tc=n;tour[tc].className='on';beats[tc].classList.add('on');
+      setTimeout(function(){[].forEach.call(tour,function(m,i){if(i!==tc)m.className=''})},750)})},{rootMargin:'-45% 0px -45% 0px'});
+    [].forEach.call(beats,function(b){bo.observe(b)})}
+  // scroll-linked pieces
+  var bar=d.getElementById('bar'),nav=d.getElementById('navbar'),trail=d.querySelector('.trail'),path=trail&&trail.querySelector('path'),art=d.querySelector('.heroart'),tick=false;
+  if(path) path.setAttribute('pathLength','1');
+  function onScroll(){tick=false;var y=scrollY,h=root.scrollHeight-innerHeight;
+    bar.style.transform='scaleX('+(h>0?y/h:0)+')'; nav.classList.toggle('stuck',y>8);
+    if(calm)return;
+    if(art&&y<innerHeight*1.2) art.style.transform='translateY('+(y*-.06)+'px)';
+    if(trail){var r=trail.getBoundingClientRect(),k=(innerHeight-r.top)/(innerHeight*.75+r.height*.5);trail.style.setProperty('--draw',Math.max(0,Math.min(1,1-k)))}
+  }
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true}); addEventListener('resize',onScroll); onScroll();
+})();
+</script>
 </body>
 </html>
