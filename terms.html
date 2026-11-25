@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChiroBoards Terms of Use</title>
+<link rel="icon" href="assets/favicon.png">
+<style>
+:root{
+  --green:#639922;--green-d:#3B6D11;--green-edge:#2f570d;--mint:#EAF3DE;--page:#F7FAF3;--card:#fff;
+  --ink:#1F2A1A;--muted:#5d6b57;--line:#e1ead7;
+  --orange:#D2690F;--orange-edge:#8f4406;--blue:#1F6FC4;--blue-edge:#124a87;
+  --foot:#1c2a12;--shadow:0 10px 30px rgba(40,70,10,.10);
+}
+@media (prefers-color-scheme:dark){:root{
+  --page:#11160e;--card:#1a2116;--mint:#1c2716;--ink:#eef4e8;--muted:#a9b8a1;--line:#2b3524;--foot:#0b0f08;--shadow:0 10px 30px rgba(0,0,0,.4);
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font:17px/1.6 ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--green-d)}
+@media (prefers-color-scheme:dark){a{color:#9bd45c}}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.12;margin:0;font-weight:800;letter-spacing:-.01em}
+h1{font-size:clamp(38px,6.2vw,68px)}
+h2{font-size:clamp(28px,3.6vw,40px);text-align:center}
+h3{font-size:20px}
+.sub{color:var(--muted);text-align:center;max-width:620px;margin:10px auto 0}
+section{padding:64px 0}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:10px}
+.nav nav{display:flex;gap:22px;font-weight:700;font-size:15px}
+.nav nav a{color:var(--ink);text-decoration:none;opacity:.8}
+.nav nav a:hover{opacity:1}
+@media (max-width:640px){.nav nav a.hide{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:36px 0 56px}
+.hero p.lead{font-size:20px;color:var(--muted);max-width:480px;margin:18px 0 26px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--page);font-weight:800;padding:12px 22px;border-radius:999px;box-shadow:0 5px 0 rgba(0,0,0,.25)}
+.badge small{font-weight:600;opacity:.8}
+.hero .note{font-size:14px;color:var(--muted);margin-top:16px}
+.btn{display:inline-block;background:var(--green);color:#fff;font-weight:800;text-decoration:none;padding:12px 22px;border-radius:16px;box-shadow:0 5px 0 var(--green-edge);margin-left:10px}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--green-edge)}
+.phone{justify-self:center;width:min(300px,78vw);border-radius:44px;padding:10px;background:#111;box-shadow:var(--shadow),0 0 0 2px #2a2a2a inset}
+.phone img{border-radius:35px}
+.heroart{position:relative;display:grid;place-items:center}
+.heroart:before{content:"";position:absolute;inset:8% 4%;background:var(--mint);border-radius:48% 52% 46% 54%/50% 44% 56% 50%;z-index:-1}
+@media (max-width:820px){.hero{grid-template-columns:1fr;text-align:center}.hero p.lead{margin-inline:auto}.btn{margin:12px 0 0}}
+
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.tile{border-radius:22px;padding:22px 20px;color:#fff;font-weight:800}
+.tile b{display:block;font-size:clamp(30px,4.4vw,44px);line-height:1}
+.tile span{font-size:16px;opacity:.95}
+.t1{background:var(--green-d);box-shadow:0 7px 0 var(--green-edge)}
+.t2{background:var(--orange);box-shadow:0 7px 0 var(--orange-edge)}
+.t3{background:var(--blue);box-shadow:0 7px 0 var(--blue-edge)}
+@media (max-width:560px){.tiles{grid-template-columns:1fr}}
+
+/* features */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 4px 0 var(--line)}
+.card p{margin:8px 0 0;color:var(--muted);font-size:16px}
+.ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:24px;margin-bottom:14px;background:var(--mint)}
+@media (max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+
+/* trail */
+.trail{background:var(--mint);position:relative;overflow:hidden}
+.trail svg{position:absolute;left:0;top:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;position:relative}
+.step{background:var(--card);border-radius:22px;padding:22px;box-shadow:0 5px 0 rgba(60,100,20,.18)}
+.num{width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:grid;place-items:center;box-shadow:0 4px 0 var(--green-edge);margin-bottom:12px}
+.step p{margin:6px 0 0;color:var(--muted);font-size:16px}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+
+/* plan */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.split h2{text-align:left}
+.split ul{padding-left:20px;color:var(--muted)}
+.split li{margin:8px 0}
+.shot{border-radius:26px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+@media (max-width:820px){.split{grid-template-columns:1fr}.split h2{text-align:center}}
+
+/* devices */
+.devices{display:grid;grid-template-columns:.42fr .8fr 1.25fr;gap:26px;align-items:end;margin-top:36px}
+.devices figure{margin:0;text-align:center;font-weight:700;color:var(--muted);font-size:15px}
+.devices img{border-radius:18px;border:6px solid #111;box-shadow:var(--shadow);margin-bottom:10px;width:100%}
+@media (max-width:700px){.devices{grid-template-columns:1fr 1.6fr}.devices figure:last-child{grid-column:1/-1}}
+
+/* compare + faq */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.two h2{text-align:left;font-size:28px;margin-bottom:16px}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 4px 0 var(--line)}
+.plan.pro{border-color:var(--green);box-shadow:0 4px 0 var(--green)}
+.plan ul{list-style:none;padding:0;margin:12px 0 0;font-size:15.5px;color:var(--muted)}
+.plan li{padding-left:24px;position:relative;margin:8px 0}
+.plan li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.fine{font-size:14px;color:var(--muted);margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--green);font-size:22px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin:10px 0 2px;color:var(--muted);font-size:16px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+@media (max-width:480px){.plans{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--foot);color:#dfe9d6;padding:44px 0 34px;margin-top:30px}
+footer a{color:#dfe9d6;text-decoration:none;opacity:.85}
+footer a:hover{opacity:1;text-decoration:underline}
+.fgrid{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}
+.fgrid h4{margin:0 0 8px;font-size:15px;color:#fff}
+.fgrid div a{display:block;margin:6px 0;font-size:15px}
+.legal{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px;font-size:13.5px;opacity:.75}
+</style>
+<style>
+main.doc{max-width:760px;margin:0 auto;padding:24px 20px 40px}
+main.doc h1{font-size:clamp(32px,5vw,46px);margin:8px 0 14px}
+main.doc h2{text-align:left;font-size:21px;margin:26px 0 6px}
+main.doc .card{margin:14px 0}
+main.doc .card h2{margin-top:0}
+main.doc .card p{color:var(--ink)}
+main.doc .muted{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="nav">
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt="ChiroBoards logo">ChiroBoards</a>
+    <nav><a class="hide" href="index.html#features">Features</a><a class="hide" href="index.html#faq">FAQ</a><a href="support.html">Support</a></nav>
+</div></div>
+<main class="doc">
+<h1>ChiroBoards Terms of Use</h1>
+<p class="muted">Last updated November 2026</p>
+<h2>Using ChiroBoards</h2>
+<p>ChiroBoards is a study aid for the NBCE Part I exam. It is not affiliated with, endorsed by or sponsored by the National Board of Chiropractic Examiners. Questions, notes and figures are original study material, not real exam items, and do not guarantee any exam result.</p>
+<h2>Your licence</h2>
+<p>We grant you a personal, non-transferable licence to use ChiroBoards and its content for your own study. All questions, explanations, notes, tables, illustrations and other content are protected by copyright and belong to ChiroBoards.</p>
+<h2>What you may not do</h2>
+<p>You may not copy, screenshot for distribution, record, reproduce, sell, share, upload or publish any ChiroBoards content, in whole or in part, including on study-sharing sites such as Quizlet or Course Hero, in group chats or in shared drives. You may not try to extract, decrypt or reverse-engineer the app or its content. Content may carry a personal watermark so that shared copies can be traced. We may end access and take legal action, including takedown requests, against anyone who breaks these terms.</p>
+<h2>Subscriptions</h2>
+<p>ChiroBoards Pro is sold as an auto-renewing subscription (weekly, monthly, every 3 months or yearly) through your Apple ID. Payment is charged to your Apple ID at confirmation of purchase. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period, and your account is charged for renewal within 24 hours before the period ends. Any unused portion of a free trial ends when you purchase a subscription. You can manage or cancel your subscription in your Apple ID account settings. Refunds are handled by Apple under its policies.</p>
+<h2>Accuracy</h2>
+<p>We work to keep the content accurate, but it may contain errors and is provided for study only, not as medical advice. Always check important facts against your course materials.</p>
+<h2>Changes</h2>
+<p>We may update the app, its content and these terms. Continuing to use ChiroBoards after a change means you accept the updated terms.</p>
+<h2>Apple&#x27;s terms</h2>
+<p>These terms are between you and ChiroBoards, not Apple. Apple&#x27;s standard Licensed Application End User License Agreement also applies.</p>
+<h2>Contact</h2>
+<p>Questions about these terms? Email <a href="mailto:chiroboards0@gmail.com">chiroboards0@gmail.com</a>.</p>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="brand" href="index.html" style="color:#fff"><img src="assets/icon.png" alt="">ChiroBoards</a><p style="max-width:300px;font-size:15px;opacity:.8">NBCE Part I prep, a few minutes a day.</p></div>
+      <div><h4>App</h4><a href="index.html#features">Features</a><a href="index.html#plan">Study plan</a><a href="index.html#faq">FAQ</a></div>
+      <div><h4>Help</h4><a href="support.html">Support</a><a href="mailto:chiroboards0@gmail.com">Email us</a><a href="https://www.instagram.com/getchiroboards/">Instagram</a></div>
+      <div><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
+    </div>
+    <p class="legal">ChiroBoards is an independent study aid. It is not affiliated with, endorsed by or sponsored by the National Board of Chiropractic Examiners (NBCE). It does not guarantee any exam result.</p>
+  </div>
+</footer>
+</body>
+</html>
