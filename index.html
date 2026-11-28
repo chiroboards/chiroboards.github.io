@@ -22,7 +22,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{margin:0;background:var(--page);color:var(--ink);font:17px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--page);color:var(--ink);font:17px/1.6 var(--font);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--green-d)}
 h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.025em;font-weight:800}
@@ -108,11 +108,11 @@ section{position:relative;padding:110px 0}
 .phone .screen img.on{opacity:1;transform:none}
 
 /* tour */
-.tour{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px}
-.tour .stage{position:sticky;top:110px;height:calc(100vh - 140px);display:grid;place-items:center}
+.tour{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:10px}
+.tour .stage{position:sticky;top:90px;height:calc(100vh - 110px);max-height:720px;display:grid;place-items:center}
 .tour .glow{position:absolute;width:min(440px,90vw);height:min(440px,90vw);border-radius:50%;background:radial-gradient(circle,#D7E9C2 0%,rgba(215,233,194,0) 70%)}
-.steps{padding:12vh 0}
-.step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .5s}
+.steps{padding:2vh 0 6vh}
+.step{min-height:38vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .5s}
 .step.on{opacity:1}
 .step-shot{display:none}
 .step h3{font-size:34px;margin:10px 0 12px;letter-spacing:-.02em}
@@ -350,10 +350,10 @@ footer .legal{border-top:1px solid var(--line);margin-top:40px;padding-top:24px;
       <div class="stage"><div class="glow"></div>
         <div class="phone"><div class="screen" id="tourScreen">
           <img class="on" src="assets/app-today.jpg" alt="Today's plan shown as a trail of steps">
-          <img src="assets/app-question.jpg" alt="A question with every answer explained" loading="lazy">
-          <img src="assets/app-notes.jpg" alt="Study notes with a table" loading="lazy">
-          <img src="assets/app-exam.jpg" alt="Mock exam results by subject" loading="lazy">
-          <img src="assets/app-weak.jpg" alt="Weak areas list" loading="lazy">
+          <img src="assets/app-question.jpg" alt="A question with every answer explained">
+          <img src="assets/app-notes.jpg" alt="Study notes with a table">
+          <img src="assets/app-exam.jpg" alt="Mock exam results by subject">
+          <img src="assets/app-weak.jpg" alt="Weak areas list">
         </div></div>
       </div>
       <div class="steps">
@@ -374,17 +374,17 @@ footer .legal{border-top:1px solid var(--line);margin-top:40px;padding-top:24px;
       <h2 class="reveal d1" style="margin-top:10px">More than multiple choice.</h2>
       <p class="sub reveal d2" style="margin-left:0;text-align:left">Recall a term, pick every correct answer, or match pairs. Each one is explained like the rest.</p>
       <div class="tabs reveal d3" id="tabs">
-        <button class="tab on" data-i="0"><span class="n">A</span><span><b>Multiple choice</b><span>3,242 questions</span></span><i class="bar"></i></button>
-        <button class="tab" data-i="1"><span class="n">__</span><span><b>Fill in the blank</b><span>154 questions</span></span><i class="bar"></i></button>
-        <button class="tab" data-i="2"><span class="n">✓✓</span><span><b>Select all that apply</b><span>76 questions</span></span><i class="bar"></i></button>
-        <button class="tab" data-i="3"><span class="n">⇄</span><span><b>Matching</b><span>128 questions</span></span><i class="bar"></i></button>
+        <button class="tab on" data-i="0"><span class="n">A</span><span><b>Multiple choice</b><span>Pick the best answer</span></span><i class="bar"></i></button>
+        <button class="tab" data-i="1"><span class="n">__</span><span><b>Fill in the blank</b><span>Recall the term yourself</span></span><i class="bar"></i></button>
+        <button class="tab" data-i="2"><span class="n">✓✓</span><span><b>Select all that apply</b><span>Find every correct answer</span></span><i class="bar"></i></button>
+        <button class="tab" data-i="3"><span class="n">⇄</span><span><b>Matching</b><span>Pair each item with its match</span></span><i class="bar"></i></button>
       </div>
     </div>
     <div class="reveal d2"><div class="phone"><div class="screen" id="fmtScreen">
-      <img class="on" src="assets/app-question.jpg" alt="Multiple choice question" loading="lazy">
-      <img src="assets/app-blank.jpg" alt="Fill in the blank question" loading="lazy">
-      <img src="assets/app-multi.jpg" alt="Select all that apply question" loading="lazy">
-      <img src="assets/app-match.jpg" alt="Matching question" loading="lazy">
+      <img class="on" src="assets/app-question.jpg" alt="Multiple choice question">
+      <img src="assets/app-blank.jpg" alt="Fill in the blank question">
+      <img src="assets/app-multi.jpg" alt="Select all that apply question">
+      <img src="assets/app-match.jpg" alt="Matching question">
     </div></div></div>
   </div>
 </section>
